@@ -10,16 +10,24 @@ namespace Library.Api.Controllers
     {
         private readonly ICityRepository _cityrepository;
 
-        public CityController(ICityRepository cityrepository)
+        public CityController(ICityRepository cityrepository )
         {
             _cityrepository = cityrepository;
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetCities()
         {
             var cities = await _cityrepository.GetCities();
             return Ok(cities);
 
         }
+
+       /* [HttpGet("{id}")]
+       public async Task<IActionResult> GetCity(int id)
+        {
+            var city = await _cityrepository.GetCity(id);
+            var cityDto = _mapper.Map
+        }*/
     }
 }
