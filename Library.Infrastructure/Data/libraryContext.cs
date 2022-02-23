@@ -31,15 +31,10 @@ namespace Library.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new AuthorConfiguration());
-
             modelBuilder.ApplyConfiguration(new BookConfiguration());
-
             modelBuilder.ApplyConfiguration(new CityConfiguration());
-
             modelBuilder.ApplyConfiguration(new EditorialConfiguration());
-
-            modelBuilder.ApplyConfiguration(new GenreConfiguration());
-         
+            modelBuilder.ApplyConfiguration(new GenreConfiguration());         
         }
 
         

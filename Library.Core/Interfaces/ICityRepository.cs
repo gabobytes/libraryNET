@@ -9,6 +9,7 @@ namespace Library.Core.Interfaces
     public interface ICityRepository
     {
         Task<IEnumerable<Cities>> GetCities();
+        Task<Cities> GetCity(int id);
   
     }
 }

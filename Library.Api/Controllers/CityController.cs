@@ -23,11 +23,11 @@ namespace Library.Api.Controllers
 
         }
 
-       /* [HttpGet("{id}")]
+        [HttpGet("{id}")]
        public async Task<IActionResult> GetCity(int id)
         {
             var city = await _cityrepository.GetCity(id);
-            var cityDto = _mapper.Map
-        }*/
+            return Ok(city);
+        }
     }
 }

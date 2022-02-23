@@ -24,5 +24,10 @@ namespace Library.Infrastructure.Repositories
             return cities;
         }
 
+        public async Task<Cities> GetCity(int id)
+        {
+            var city = await _context.Cities.FirstOrDefaultAsync(x=> x.IdCity == id);
+            return city;
+        }
     }
 }

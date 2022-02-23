@@ -7,3 +7,4 @@ D:\Dropbox\NET Core\Apps\Library\Library.Core\obj\Debug\netcoreapp3.1\Library.Co
 D:\Dropbox\NET Core\Apps\Library\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.CoreCompileInputs.cache
 D:\Dropbox\NET Core\Apps\Library\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.dll
 D:\Dropbox\NET Core\Apps\Library\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.pdb
+D:\Dropbox\NET Core\Apps\Library\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.AssemblyReference.cache
