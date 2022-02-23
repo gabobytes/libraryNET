@@ -3,16 +3,10 @@ using Library.Infrastructure.Data;
 using Library.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Library.Api
 {
@@ -30,12 +24,19 @@ namespace Library.Api
         {
             services.AddControllers();
 
+            services.AddTransient<IBookRepository, BookRepository>();
+            services.AddTransient<ICityRepository, CityRepository>();
+            services.AddTransient<IEditorialRepository, EditorialRepository>();
+            services.AddTransient<IAuthorRepository, AuthorRepository>();
+            services.AddTransient<IGenreRepository, GenreRepository>();
+
+            //using database connection
             services.AddDbContext<libraryContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("libraryConnection"))
 
             );
 
-            services.AddTransient<IBookRepository, BookRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

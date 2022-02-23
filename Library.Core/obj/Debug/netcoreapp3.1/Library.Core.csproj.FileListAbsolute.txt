@@ -1,7 +1,6 @@
 D:\Dropbox\NET Core\Apps\Library\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.deps.json
 D:\Dropbox\NET Core\Apps\Library\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.dll
 D:\Dropbox\NET Core\Apps\Library\Library.Core\bin\Debug\netcoreapp3.1\Library.Core.pdb
-D:\Dropbox\NET Core\Apps\Library\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.csproj.AssemblyReference.cache
 D:\Dropbox\NET Core\Apps\Library\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.GeneratedMSBuildEditorConfig.editorconfig
 D:\Dropbox\NET Core\Apps\Library\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfoInputs.cache
 D:\Dropbox\NET Core\Apps\Library\Library.Core\obj\Debug\netcoreapp3.1\Library.Core.AssemblyInfo.cs
