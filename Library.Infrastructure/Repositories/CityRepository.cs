@@ -29,5 +29,12 @@ namespace Library.Infrastructure.Repositories
             var city = await _context.Cities.FirstOrDefaultAsync(x=> x.IdCity == id);
             return city;
         }
+
+        public async Task InsertCity(Cities city)
+        {
+            _context.Cities.Add(city);
+            await _context.SaveChangesAsync();
+
+        }
     }
 }

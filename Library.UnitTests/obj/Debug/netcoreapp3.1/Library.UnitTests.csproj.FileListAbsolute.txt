@@ -95,3 +95,4 @@ D:\Dropbox\NET Core\Apps\Library\Library.UnitTests\obj\Debug\netcoreapp3.1\Libra
 D:\Dropbox\NET Core\Apps\Library\Library.UnitTests\obj\Debug\netcoreapp3.1\Library.UnitTests.dll
 D:\Dropbox\NET Core\Apps\Library\Library.UnitTests\obj\Debug\netcoreapp3.1\Library.UnitTests.pdb
 D:\Dropbox\NET Core\Apps\Library\Library.UnitTests\obj\Debug\netcoreapp3.1\Library.UnitTests.genruntimeconfig.cache
+D:\Dropbox\NET Core\Apps\Library\Library.UnitTests\obj\Debug\netcoreapp3.1\Library.UnitTests.csproj.AssemblyReference.cache

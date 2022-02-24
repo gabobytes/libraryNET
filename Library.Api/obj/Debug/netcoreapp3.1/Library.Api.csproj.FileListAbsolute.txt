@@ -64,3 +64,9 @@ D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\Library.Inf
 D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\Library.Core.pdb
 D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\Library.Infrastructure.pdb
 D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api.csproj.CopyComplete
+D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
