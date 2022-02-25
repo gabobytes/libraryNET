@@ -4,13 +4,14 @@ using Library.Core.Entities;
 using Library.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace Library.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class CityController : ControllerBase
     {
         private readonly ICityRepository _cityrepository;
@@ -47,6 +48,24 @@ namespace Library.Api.Controllers
             await _cityrepository.InsertCity(city);
             return Ok(city);
 
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(int id, CityDto cityDto)
+        {
+            var city = _mapper.Map<Cities>(cityDto);
+
+            await _cityrepository.InsertCity(city);
+            return Ok(city);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var city = _mapper.Map<Cities>(cityDto);
+
+            await _cityrepository.InsertCity(city);
+            return Ok(city);
         }
     }
 }

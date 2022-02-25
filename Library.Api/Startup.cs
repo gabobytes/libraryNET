@@ -1,5 +1,7 @@
+using FluentValidation.AspNetCore;
 using Library.Core.Interfaces;
 using Library.Infrastructure.Data;
+using Library.Infrastructure.Filters;
 using Library.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,10 +26,14 @@ namespace Library.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            
+
             services.AddControllers().AddNewtonsoftJson(options => {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-            });
+            })
+            .ConfigureApiBehaviorOptions(options => 
+            {
+                //options.SuppressModelStateInvalidFilter = true;
+            });            ;
 
             services.AddTransient<IBookRepository, BookRepository>();
             services.AddTransient<ICityRepository, CityRepository>();
@@ -38,9 +44,16 @@ namespace Library.Api
             //using database connection
             services.AddDbContext<libraryContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("libraryConnection"))
-
             );
 
+
+           services.AddMvc(options =>
+            {
+                options.Filters.Add<ValidationFilter>();
+            }).AddFluentValidation(options =>
+            {
+                options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            }) ;
 
         }
 

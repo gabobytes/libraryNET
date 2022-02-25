@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "eWRmOfMs9LX/pQtEf6mW4uuie2W7MxrqwTc1SOCJRd9axttaFNypjeb91KVt5wIPMLdRwwLDYQMUCQMmsKYRnQ==",
+  "dgSpecHash": "ZBUTyonbN/eEal52NHNwhjo9aAgVAVsYtW3Gjvi9fm8TMhBFXvGjzaR7EEwFD+U880taQH1JbU+dubkh7YViJw==",
   "success": true,
   "projectFilePath": "D:\\Dropbox\\NET Core\\Apps\\Library\\Library.Api\\Library.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gabo\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Gabo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Gabo\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
+    "C:\\Users\\Gabo\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.6\\fluentvalidation.aspnetcore.10.3.6.nupkg.sha512",
+    "C:\\Users\\Gabo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.6\\fluentvalidation.dependencyinjectionextensions.10.3.6.nupkg.sha512",
     "C:\\Users\\Gabo\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.22\\microsoft.aspnetcore.jsonpatch.3.1.22.nupkg.sha512",
     "C:\\Users\\Gabo\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.22\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.22.nupkg.sha512",
     "C:\\Users\\Gabo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

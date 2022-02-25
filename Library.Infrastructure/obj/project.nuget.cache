@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "kvIVaJYDhF6RhWTPMkAeyRRsZS3V01DWmkjNqew8LMg6sGSNTn6xCPmfM/cVv1xXhPxYvmweETUVGxQVX3sikg==",
+  "dgSpecHash": "R6yzxaEhqZeUcpWb4q3gp2rvgLHP8sCMjHyqKThg8w6esJ+MlUFD03y+oNCuzBOOkOooJTDWJ3T5VP7hLULI6Q==",
   "success": true,
   "projectFilePath": "D:\\Dropbox\\NET Core\\Apps\\Library\\Library.Infrastructure\\Library.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gabo\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Gabo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Gabo\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
+    "C:\\Users\\Gabo\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.6\\fluentvalidation.aspnetcore.10.3.6.nupkg.sha512",
+    "C:\\Users\\Gabo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.6\\fluentvalidation.dependencyinjectionextensions.10.3.6.nupkg.sha512",
     "C:\\Users\\Gabo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Gabo\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\Gabo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
