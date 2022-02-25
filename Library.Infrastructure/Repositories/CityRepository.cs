@@ -36,5 +36,23 @@ namespace Library.Infrastructure.Repositories
             await _context.SaveChangesAsync();
 
         }
+
+        public async Task<bool> UpdateCity(Cities city)
+        {
+            var currentPost = await GetCity(city.IdCity);
+            currentPost.NameCity = city.NameCity;
+
+            int rows = await _context.SaveChangesAsync();
+            return rows > 0;
+        }
+
+        public async Task<bool> DeleteCity(int id)
+        {
+            var currentPost = await GetCity(id);
+            _context.Cities.Remove(currentPost);
+
+            int rows = await _context.SaveChangesAsync();
+            return rows > 0;
+        }
     }
 }

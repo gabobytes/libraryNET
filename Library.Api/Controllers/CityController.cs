@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Library.Api.Responses;
 using Library.Core.DTOs;
 using Library.Core.Entities;
 using Library.Core.Interfaces;
@@ -28,7 +29,9 @@ namespace Library.Api.Controllers
         {
             var cities = await _cityrepository.GetCities();
             var citiesDto = _mapper.Map<IEnumerable<CityDto>>(cities);
-            return Ok(citiesDto);
+            var response = new ApiResponse<IEnumerable<CityDto>>(citiesDto);
+
+            return Ok(response);
         }
 
         [HttpGet("{id}")]
@@ -36,8 +39,9 @@ namespace Library.Api.Controllers
         {
             var city = await _cityrepository.GetCity(id);
             var cityDto = _mapper.Map<CityDto>(city);
+            var response = new ApiResponse<CityDto>(cityDto);
 
-            return Ok(cityDto);
+            return Ok(response);
         }
 
         [HttpPost]
@@ -46,26 +50,32 @@ namespace Library.Api.Controllers
             var city = _mapper.Map<Cities>(cityDto);
 
             await _cityrepository.InsertCity(city);
+            
+            cityDto = _mapper.Map<CityDto> (city );            
+            var response = new ApiResponse<CityDto>(cityDto);
+
             return Ok(city);
 
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, CityDto cityDto)
         {
             var city = _mapper.Map<Cities>(cityDto);
+            city.IdCity = id;
 
-            await _cityrepository.InsertCity(city);
-            return Ok(city);
+            var result = await _cityrepository.UpdateCity(city);
+            var response = new ApiResponse<bool>(result);
+
+            return Ok(response);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
-        {
-            var city = _mapper.Map<Cities>(cityDto);
-
-            await _cityrepository.InsertCity(city);
-            return Ok(city);
+        {            
+            var result = await _cityrepository.DeleteCity(id);
+            var response = new ApiResponse<bool>(result);
+            return Ok(response);
         }
     }
 }

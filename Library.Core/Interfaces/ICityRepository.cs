@@ -11,6 +11,9 @@ namespace Library.Core.Interfaces
         Task<IEnumerable<Cities>> GetCities();
         Task<Cities> GetCity(int id);
         Task InsertCity(Cities city);
-  
+        Task<bool> UpdateCity(Cities city);
+        Task<bool> DeleteCity(int id);
+
+
     }
 }
