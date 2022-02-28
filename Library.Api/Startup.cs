@@ -1,5 +1,6 @@
 using FluentValidation.AspNetCore;
 using Library.Core.Interfaces;
+using Library.Core.Services;
 using Library.Infrastructure.Data;
 using Library.Infrastructure.Filters;
 using Library.Infrastructure.Repositories;
@@ -35,10 +36,13 @@ namespace Library.Api
                 //options.SuppressModelStateInvalidFilter = true;
             });            ;
 
-            services.AddTransient<IBookRepository, BookRepository>();
+
+            services.AddTransient<ICityService, CityService>();
             services.AddTransient<ICityRepository, CityRepository>();
+            services.AddTransient<IBookRepository, BookRepository>();            
             services.AddTransient<IEditorialRepository, EditorialRepository>();
             services.AddTransient<IAuthorRepository, AuthorRepository>();
+            services.AddTransient<IAuthorService, AuthorService>();
             services.AddTransient<IGenreRepository, GenreRepository>();
 
             //using database connection

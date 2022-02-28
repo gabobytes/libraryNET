@@ -15,19 +15,19 @@ namespace Library.Api.Controllers
 
     public class CityController : ControllerBase
     {
-        private readonly ICityRepository _cityrepository;
+        private readonly ICityService _postService;
         private readonly IMapper _mapper;
 
-        public CityController(ICityRepository cityrepository , IMapper mapper)
+        public CityController(ICityService cityService , IMapper mapper)
         {
-            _cityrepository = cityrepository;
+            _postService = cityService;
             _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetCities()
         {
-            var cities = await _cityrepository.GetCities();
+            var cities = await _postService.GetCities();
             var citiesDto = _mapper.Map<IEnumerable<CityDto>>(cities);
             var response = new ApiResponse<IEnumerable<CityDto>>(citiesDto);
 
@@ -37,7 +37,7 @@ namespace Library.Api.Controllers
         [HttpGet("{id}")]
        public async Task<IActionResult> GetCity(int id)
         {
-            var city = await _cityrepository.GetCity(id);
+            var city = await _postService.GetCity(id);
             var cityDto = _mapper.Map<CityDto>(city);
             var response = new ApiResponse<CityDto>(cityDto);
 
@@ -49,13 +49,12 @@ namespace Library.Api.Controllers
         {
             var city = _mapper.Map<Cities>(cityDto);
 
-            await _cityrepository.InsertCity(city);
+            await _postService.InsertCity(city);
             
             cityDto = _mapper.Map<CityDto> (city );            
             var response = new ApiResponse<CityDto>(cityDto);
 
-            return Ok(city);
-
+            return Ok(response);
         }
 
         [HttpPut("{id}")]
@@ -64,7 +63,7 @@ namespace Library.Api.Controllers
             var city = _mapper.Map<Cities>(cityDto);
             city.IdCity = id;
 
-            var result = await _cityrepository.UpdateCity(city);
+            var result = await _postService.UpdateCity(city);
             var response = new ApiResponse<bool>(result);
 
             return Ok(response);
@@ -73,7 +72,7 @@ namespace Library.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {            
-            var result = await _cityrepository.DeleteCity(id);
+            var result = await _postService.DeleteCity(id);
             var response = new ApiResponse<bool>(result);
             return Ok(response);
         }

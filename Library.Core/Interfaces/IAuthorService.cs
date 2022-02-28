@@ -1,17 +1,15 @@
 ﻿using Library.Core.Entities;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Library.Core.Interfaces
 {
-    public interface IAuthorRepository
+    public interface IAuthorService
     {
-        Task<IEnumerable<Authors>> GetAuthors();
+        Task<bool> DeleteAuthor(int id);
         Task<Authors> GetAuthor(int id);
+        Task<IEnumerable<Authors>> GetAuthors();
         Task InsertAuthor(Authors author);
         Task<bool> UpdateAuthor(Authors author);
-        Task<bool> DeleteAuthor(int id);
     }
 }

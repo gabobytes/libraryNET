@@ -14,6 +14,10 @@ namespace Library.Infrastructure.Mappings
             CreateMap<Cities, CityDto>();
             CreateMap<CityDto,Cities >();
 
+            CreateMap<Authors, AuthorDto>();
+            CreateMap<AuthorDto, Authors>();
+            
+
         }
     }
 }
