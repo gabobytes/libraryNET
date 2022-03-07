@@ -10,10 +10,12 @@ namespace Library.Core.Services
     public class AuthorService : IAuthorService
     {
         private readonly IAuthorRepository _authorRepository;
+        private readonly ICityRepository _cityRepository;
 
-        public AuthorService(IAuthorRepository authorRepository)
+        public AuthorService(IAuthorRepository authorRepository, ICityRepository cityRepository)
         {
             _authorRepository = authorRepository;
+            _cityRepository = cityRepository;
         }
 
         public async Task<IEnumerable<Authors>> GetAuthors()
@@ -28,6 +30,13 @@ namespace Library.Core.Services
 
         public async Task InsertAuthor(Authors author)
         {
+
+            var city = await _cityRepository.GetCity(author.IdCityBirth);
+            if (city == null)
+            {
+                throw new Exception("City doesn't exists");
+            }
+
             await _authorRepository.InsertAuthor(author);
         }
 
