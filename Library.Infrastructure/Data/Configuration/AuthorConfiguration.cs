@@ -11,11 +11,11 @@ namespace Library.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Authors> builder)
             {
-            builder.HasKey(e => e.IdAuthor);
+            builder.HasKey(e => e.Id);
 
             builder.ToTable("authors");
 
-            builder.Property(e => e.IdAuthor).HasColumnName("id_author");
+            builder.Property(e => e.Id).HasColumnName("id_author");
 
             builder.Property(e => e.Datebirth)
                 .HasColumnName("datebirth")

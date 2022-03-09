@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Library.Core.Entities
 {
-    public class Book
+    public class Book : BaseEntity
     {
-        public int id_book { get; set; }
+        
         public string title { get; set; }
         public int year { get; set; }
         public int id_genre { get; set; }

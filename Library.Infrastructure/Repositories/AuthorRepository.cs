@@ -24,7 +24,7 @@ namespace Library.Infrastructure.Repositories
 
         public async Task<Authors> GetAuthor(int id)
         {
-            var author = await _context.Authors.FirstOrDefaultAsync(x => x.IdAuthor == id);
+            var author = await _context.Authors.FirstOrDefaultAsync(x => x.Id == id);
             return author;
         }
 
@@ -36,7 +36,7 @@ namespace Library.Infrastructure.Repositories
 
         public async Task<bool> UpdateAuthor(Authors author)
         {
-            var currentAuthor = await GetAuthor(author.IdAuthor);
+            var currentAuthor = await GetAuthor(author.Id);
             currentAuthor.Fullname = author.Fullname;
             currentAuthor.Datebirth = author.Datebirth;
             currentAuthor.IdCityBirth = author.IdCityBirth;

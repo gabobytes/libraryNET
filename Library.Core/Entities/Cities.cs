@@ -8,14 +8,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Library.Core.Entities
 {
-    public partial class Cities
+    public partial class Cities : BaseEntity
     {
         public Cities()
         {
             Authors = new HashSet<Authors>();
         }
 
-        public int IdCity { get; set; }
+        
         
         public string NameCity { get; set; }
 

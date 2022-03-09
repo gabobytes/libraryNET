@@ -11,11 +11,11 @@ namespace Library.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Editorials> builder)
         {
-            builder.HasKey(e => e.IdEditorial);
+            builder.HasKey(e => e.Id);
 
             builder.ToTable("editorials");
 
-            builder.Property(e => e.IdEditorial).HasColumnName("id_editorial");
+            builder.Property(e => e.Id).HasColumnName("id_editorial");
 
             builder.Property(e => e.Address)
                 .IsRequired()

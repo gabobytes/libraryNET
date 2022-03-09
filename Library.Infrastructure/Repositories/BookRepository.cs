@@ -26,7 +26,7 @@ namespace Library.Infrastructure.Repositories
 
         public async Task<Books> GetBook(int id)
         {
-            var book = await _context.Books.FirstOrDefaultAsync(x => x.IdBook == id);
+            var book = await _context.Books.FirstOrDefaultAsync(x => x.Id == id);
             return book;
         }
 
@@ -38,7 +38,7 @@ namespace Library.Infrastructure.Repositories
 
         public async Task<bool> UpdateBook(Book book)
         {
-            var currentBook = await GetBook(book.id_book);
+            var currentBook = await GetBook(book.Id);
             currentBook.Title = book.title;
             currentBook.Year = book.year;
             currentBook.IdGenre = book.id_genre;

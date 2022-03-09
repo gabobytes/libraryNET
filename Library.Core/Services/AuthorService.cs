@@ -9,45 +9,47 @@ namespace Library.Core.Services
 {
     public class AuthorService : IAuthorService
     {
-        private readonly IAuthorRepository _authorRepository;
-        private readonly ICityRepository _cityRepository;
+        private readonly IUnitOfWork _unitOFWork;
+        
 
-        public AuthorService(IAuthorRepository authorRepository, ICityRepository cityRepository)
+        public AuthorService(IUnitOfWork unitOFWork)
         {
-            _authorRepository = authorRepository;
-            _cityRepository = cityRepository;
+            _unitOFWork = unitOFWork;
+        
         }
 
         public async Task<IEnumerable<Authors>> GetAuthors()
         {
-            return await _authorRepository.GetAuthors();
+            return await _unitOFWork.AuthorRepository.GetAll();
         }
 
         public async Task<Authors> GetAuthor(int id)
         {
-            return await _authorRepository.GetAuthor(id);
+            return await _unitOFWork.AuthorRepository.GetById(id);
         }
 
         public async Task InsertAuthor(Authors author)
         {
 
-            var city = await _cityRepository.GetCity(author.IdCityBirth);
+            var city = await _unitOFWork.CityRepository.GetById(author.IdCityBirth);
             if (city == null)
             {
                 throw new Exception("City doesn't exists");
             }
-
-            await _authorRepository.InsertAuthor(author);
+            
+            await _unitOFWork.AuthorRepository.Add(author);
         }
 
         public async Task<bool> UpdateAuthor(Authors author)
         {
-            return await _authorRepository.UpdateAuthor(author);
+            await _unitOFWork.AuthorRepository.Update(author);
+            return true;
         }
 
         public async Task<bool> DeleteAuthor(int id)
         {
-            return await _authorRepository.DeleteAuthor(id);
+            await _unitOFWork.AuthorRepository.Delete(id);
+            return true;
         }
     }
 }

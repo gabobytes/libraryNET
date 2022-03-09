@@ -61,7 +61,7 @@ namespace Library.Api.Controllers
         public async Task<IActionResult> Put(int id, CityDto cityDto)
         {
             var city = _mapper.Map<Cities>(cityDto);
-            city.IdCity = id;
+            city.Id = id;
 
             var result = await _postService.UpdateCity(city);
             var response = new ApiResponse<bool>(result);

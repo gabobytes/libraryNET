@@ -7,14 +7,14 @@ using System.Collections.Generic;
 
 namespace Library.Core.Entities
 {
-    public partial class Authors
+    public partial class Authors: BaseEntity
     {
         public Authors()
         {
             Books = new HashSet<Books>();
         }
 
-        public int IdAuthor { get; set; }
+        
         public string Fullname { get; set; }
         public DateTime Datebirth { get; set; }
         public int IdCityBirth { get; set; }

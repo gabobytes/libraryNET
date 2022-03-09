@@ -38,12 +38,16 @@ namespace Library.Api
 
 
             services.AddTransient<ICityService, CityService>();
-            services.AddTransient<ICityRepository, CityRepository>();
+            //services.AddTransient<ICityRepository, CityRepository>();
             services.AddTransient<IBookRepository, BookRepository>();            
             services.AddTransient<IEditorialRepository, EditorialRepository>();
-            services.AddTransient<IAuthorRepository, AuthorRepository>();
+            //services.AddTransient<IAuthorRepository, AuthorRepository>();
             services.AddTransient<IAuthorService, AuthorService>();
             services.AddTransient<IGenreRepository, GenreRepository>();
+            services.AddScoped(typeof (IRepository<>), typeof(BaseRepository<>));
+            
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
 
             //using database connection
             services.AddDbContext<libraryContext>(options =>

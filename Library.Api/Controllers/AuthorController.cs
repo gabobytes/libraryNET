@@ -62,7 +62,7 @@ namespace Library.Api.Controllers
         public async Task<IActionResult> Put(int id, AuthorDto authorDto)
         {
             var author = _mapper.Map<Authors>(authorDto);
-            author.IdAuthor = id;
+            author.Id = id;
 
             var result = await _authorService.UpdateAuthor(author);
             var response = new ApiResponse<bool>(result);

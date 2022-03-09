@@ -11,11 +11,11 @@ namespace Library.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Cities> builder)
         {
-            builder.HasKey(e => e.IdCity);
+            builder.HasKey(e => e.Id);
 
             builder.ToTable("cities");
 
-            builder.Property(e => e.IdCity).HasColumnName("id_city");
+            builder.Property(e => e.Id).HasColumnName("id_city");
 
             builder.Property(e => e.NameCity)
                 .IsRequired()

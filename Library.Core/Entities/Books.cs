@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 namespace Library.Core.Entities
 {
-    public partial class Books
+    public partial class Books: BaseEntity
     {
-        public int IdBook { get; set; }
+        
         public string Title { get; set; }
         public int Year { get; set; }
         public int IdGenre { get; set; }

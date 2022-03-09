@@ -26,7 +26,7 @@ namespace Library.Infrastructure.Repositories
 
         public async Task<Cities> GetCity(int id)
         {
-            var city = await _context.Cities.FirstOrDefaultAsync(x=> x.IdCity == id);
+            var city = await _context.Cities.FirstOrDefaultAsync(x=> x.Id == id);
             return city;
         }
 
@@ -39,7 +39,7 @@ namespace Library.Infrastructure.Repositories
 
         public async Task<bool> UpdateCity(Cities city)
         {
-            var currentPost = await GetCity(city.IdCity);
+            var currentPost = await GetCity(city.Id);
             currentPost.NameCity = city.NameCity;
 
             int rows = await _context.SaveChangesAsync();

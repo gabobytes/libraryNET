@@ -11,11 +11,11 @@ namespace Library.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Genres> builder)
         {
-            builder.HasKey(e => e.IdGenre);
+            builder.HasKey(e => e.Id);
 
             builder.ToTable("genres");
 
-            builder.Property(e => e.IdGenre).HasColumnName("id_genre");
+            builder.Property(e => e.Id ).HasColumnName("id_genre");
 
             builder.Property(e => e.NameGenre)
                 .IsRequired()
