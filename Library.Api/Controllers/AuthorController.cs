@@ -26,9 +26,9 @@ namespace Library.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAuthors()
+        public  IActionResult GetAuthors()
         {
-            var authors = await _authorService.GetAuthors();
+            var authors =  _authorService.GetAuthors();
             var authorsDto = _mapper.Map<IEnumerable<AuthorDto>>(authors);
             var response = new ApiResponse<IEnumerable<AuthorDto>>(authorsDto);
 

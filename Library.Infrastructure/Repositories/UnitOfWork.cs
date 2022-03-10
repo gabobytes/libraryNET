@@ -11,7 +11,7 @@ namespace Library.Infrastructure.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly libraryContext _context; //databseconnection
-        private readonly IRepository<Authors> _authorRepository;
+        private readonly IAuthorRepository _authorRepository;
         private readonly IRepository<Cities> _cityRepository;
 
         public UnitOfWork(libraryContext context)
@@ -19,7 +19,7 @@ namespace Library.Infrastructure.Repositories
             _context = context;
         }
 
-        public IRepository<Authors> AuthorRepository => _authorRepository ?? new BaseRepository<Authors>(_context);
+        public IAuthorRepository AuthorRepository => _authorRepository ?? new AuthorRepository(_context);
         public IRepository<Cities> CityRepository => _cityRepository ?? new BaseRepository<Cities>(_context);
 
         public void Dispose()

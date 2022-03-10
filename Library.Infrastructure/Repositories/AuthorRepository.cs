@@ -2,61 +2,24 @@
 using Library.Core.Interfaces;
 using Library.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Library.Infrastructure.Repositories
 {
-    public class AuthorRepository:IAuthorRepository
+    public class AuthorRepository : BaseRepository<Authors>, IAuthorRepository
     {
-        private readonly libraryContext _context;
+        //esto se envía porque el BaseRepository en su constructor recibe este mismo parámetro
+        public AuthorRepository(libraryContext context) : base(context) {  } 
+     
 
-        public AuthorRepository(libraryContext context)
+        public async Task<IEnumerable<Authors>> GetAuthorsByCity(int idCity)
         {
-            _context = context;
-        }
-
-        public async Task<IEnumerable<Authors>>GetAuthors()
-        {
-            var authors = await _context.Authors.ToListAsync();
-            return authors;
-        }
-
-        public async Task<Authors> GetAuthor(int id)
-        {
-            var author = await _context.Authors.FirstOrDefaultAsync(x => x.Id == id);
-            return author;
-        }
-
-        public async Task InsertAuthor(Authors author)
-        {
-            _context.Authors.Add(author);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task<bool> UpdateAuthor(Authors author)
-        {
-            var currentAuthor = await GetAuthor(author.Id);
-            currentAuthor.Fullname = author.Fullname;
-            currentAuthor.Datebirth = author.Datebirth;
-            currentAuthor.IdCityBirth = author.IdCityBirth;
-            currentAuthor.Email = author.Email;
-
-            int rows = await _context.SaveChangesAsync();
-            return rows > 0;
+            return await _entities.Where(x => x.IdCityBirth == idCity).ToListAsync(); //siendo pocos list se utiliza asi, sino se utilizaria TOList
 
         }
-
-        public async Task<bool> DeleteAuthor(int id)
-        {
-            var currentAuthor = await GetAuthor(id);
-            _context.Authors.Remove(currentAuthor);
-
-            var rows = await _context.SaveChangesAsync();
-
-            return rows > 0;
-        }
-
-
     }
 }

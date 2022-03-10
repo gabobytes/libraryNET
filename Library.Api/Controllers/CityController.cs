@@ -25,9 +25,9 @@ namespace Library.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCities()
+        public IActionResult GetCities()
         {
-            var cities = await _postService.GetCities();
+            var cities =  _postService.GetCities();
             var citiesDto = _mapper.Map<IEnumerable<CityDto>>(cities);
             var response = new ApiResponse<IEnumerable<CityDto>>(citiesDto);
 

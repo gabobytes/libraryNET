@@ -95,3 +95,4 @@ D:\Dropbox\NET Core\Apps\Library\Infrastructure.IntegrationTests\obj\Debug\netco
 D:\Dropbox\NET Core\Apps\Library\Infrastructure.IntegrationTests\obj\Debug\netcoreapp3.1\Infrastructure.IntegrationTests.dll
 D:\Dropbox\NET Core\Apps\Library\Infrastructure.IntegrationTests\obj\Debug\netcoreapp3.1\Infrastructure.IntegrationTests.pdb
 D:\Dropbox\NET Core\Apps\Library\Infrastructure.IntegrationTests\obj\Debug\netcoreapp3.1\Infrastructure.IntegrationTests.genruntimeconfig.cache
+D:\Dropbox\NET Core\Apps\Library\Infrastructure.IntegrationTests\obj\Debug\netcoreapp3.1\Infrastructure.IntegrationTests.csproj.AssemblyReference.cache
