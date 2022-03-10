@@ -13,6 +13,8 @@ namespace Library.Infrastructure.Repositories
         private readonly libraryContext _context; //databseconnection
         private readonly IAuthorRepository _authorRepository;
         private readonly IRepository<Cities> _cityRepository;
+        private readonly IBookRepository _bookRepository;
+        private readonly IEditorialRepository _editorialRepository;
 
         public UnitOfWork(libraryContext context)
         {
@@ -21,6 +23,8 @@ namespace Library.Infrastructure.Repositories
 
         public IAuthorRepository AuthorRepository => _authorRepository ?? new AuthorRepository(_context);
         public IRepository<Cities> CityRepository => _cityRepository ?? new BaseRepository<Cities>(_context);
+        public IBookRepository BookRepository => _bookRepository ?? new BookRepository(_context);
+        public IEditorialRepository EditorialRepository => _editorialRepository ?? new EditorialRepository(_context);
 
         public void Dispose()
         {

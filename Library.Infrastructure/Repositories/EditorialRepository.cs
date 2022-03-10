@@ -9,21 +9,18 @@ using System.Threading.Tasks;
 
 namespace Library.Infrastructure.Repositories
 {
-    public class EditorialRepository: IEditorialRepository
+    public class EditorialRepository :   BaseRepository<Editorials>, IEditorialRepository
     {
         private readonly libraryContext _context;
 
-        public EditorialRepository(libraryContext context)
-        {
-            _context = context;
-        }
+        public EditorialRepository(libraryContext context) : base(context) { }
 
 
-        public async Task<IEnumerable<Editorials>> GetEditorials()
+       /* public async Task<IEnumerable<Editorials>> GetEditorials()
         {
             var editorials = await _context.Editorials.ToListAsync();
             return editorials;
-        }
+        }*/
 
 
 

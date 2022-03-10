@@ -16,7 +16,12 @@ namespace Library.Infrastructure.Mappings
 
             CreateMap<Authors, AuthorDto>();
             CreateMap<AuthorDto, Authors>();
-            
+
+            CreateMap<Books, BookDto>();
+            CreateMap<BookDto, Books>();
+
+            CreateMap<Editorials, EditorialDto>();
+            CreateMap<EditorialDto, Editorials>();
 
         }
     }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Library.Core.Interfaces
 {
-    public interface IEditorialRepository
+    public interface IEditorialRepository: IRepository<Editorials>
     {
-        Task<IEnumerable<Editorials>> GetEditorials();
+        //Task<IEnumerable<Editorials>> GetEditorials();
     }
 }

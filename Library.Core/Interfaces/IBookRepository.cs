@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Library.Core.Interfaces
 {
-    public interface IBookRepository
+    public interface IBookRepository: IRepository<Books>
     {
-        Task<IEnumerable<Books>> GetBooks();
+        //Task<IEnumerable<Books>> GetBooks();
     }
 }

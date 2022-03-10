@@ -1,7 +1,12 @@
-﻿using Library.Core.Interfaces;
+﻿using AutoMapper;
+using Library.Api.Responses;
+using Library.Core.DTOs;
+using Library.Core.Entities;
+using Library.Core.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,17 +17,36 @@ namespace Library.Api.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly IBookRepository _bookRepository;
+        private readonly IBookService _bookService;
+        private readonly IMapper _mapper;
 
-        public BookController(IBookRepository bookRepository)
+        public BookController(IBookService bookService,IMapper mapper)
         {
-            _bookRepository = bookRepository;
+            _bookService = bookService;
+            _mapper = mapper;
         }
 
-        public async Task<IActionResult> GetBooks()
+        [HttpGet]
+        public  IActionResult GetBooks()
         {
-            var books = await _bookRepository.GetBooks();
-            return Ok(books);
+            var books = _bookService.GetBooks();
+            var booksDto = _mapper.Map<IEnumerable<BookDto>> (books);
+            var response = new ApiResponse<IEnumerable<BookDto>>(booksDto);
+
+            return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(BookDto bookDto)
+        {
+            var book = _mapper.Map<Books>(bookDto);
+
+            await _bookService.InsertBook(book);
+
+            bookDto = _mapper.Map<BookDto>(book);
+            var response = new ApiResponse<BookDto>(bookDto);
+
+            return Ok(response);
         }
     }
 }

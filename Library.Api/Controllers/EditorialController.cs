@@ -1,4 +1,7 @@
-﻿using Library.Core.Interfaces;
+﻿using AutoMapper;
+using Library.Api.Responses;
+using Library.Core.DTOs;
+using Library.Core.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,17 +16,25 @@ namespace Library.Api.Controllers
 
     public class EditorialController : ControllerBase
     {
-        private readonly IEditorialRepository _editorialrepository;
+        private readonly IEditorialService _editorialService;
+        private readonly IMapper _mapper;
 
-        public EditorialController(IEditorialRepository editorialrepository)
+        public EditorialController(IEditorialService editorialservice, IMapper mapper)
         {
-            _editorialrepository = editorialrepository;
+            _editorialService = editorialservice;
+            _mapper = mapper;
         }
-
-        public async Task<IActionResult> GetEditorials()
+        
+        [HttpGet]
+        public IActionResult GetEditorials()
         {
-            var editorials = await _editorialrepository.GetEditorials();
-            return Ok(editorials);
+            var editorials = _editorialService.GetEditorials();
+            var editorialsDto = _mapper.Map<IEnumerable <EditorialDto>> (editorials);
+            var response = new ApiResponse<IEnumerable<EditorialDto>>(editorialsDto);
+
+            return Ok(response);
+
+
         }
     }
 }

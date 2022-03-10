@@ -43,9 +43,11 @@ namespace Library.Api
             });            ;
 
 
+            services.AddTransient<IBookService, BookService>();
             services.AddTransient<ICityService, CityService>();
+            services.AddTransient<IEditorialService, EditorialService>();
             //services.AddTransient<ICityRepository, CityRepository>();
-            services.AddTransient<IBookRepository, BookRepository>();            
+            //services.AddTransient<IBookRepository, BookRepository>();            
             services.AddTransient<IEditorialRepository, EditorialRepository>();
             //services.AddTransient<IAuthorRepository, AuthorRepository>();
             services.AddTransient<IAuthorService, AuthorService>();

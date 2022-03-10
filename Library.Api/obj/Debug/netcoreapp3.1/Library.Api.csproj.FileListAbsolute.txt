@@ -4,7 +4,6 @@ D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api
 D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api.AssemblyInfo.cs
 D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api.csproj.CoreCompileInputs.cache
 D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api.MvcApplicationPartsAssemblyInfo.cache
-D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api.MvcApplicationPartsAssemblyInfo.cs
 D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Dropbox\NET Core\Apps\Library\Library.Api\bin\Debug\netcoreapp3.1\Library.Api.exe
@@ -74,3 +73,4 @@ D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api
 D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api.dll
 D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api.pdb
 D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api.genruntimeconfig.cache
+D:\Dropbox\NET Core\Apps\Library\Library.Api\obj\Debug\netcoreapp3.1\Library.Api.MvcApplicationPartsAssemblyInfo.cs
