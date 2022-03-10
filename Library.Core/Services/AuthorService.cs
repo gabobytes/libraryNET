@@ -1,4 +1,5 @@
 ﻿using Library.Core.Entities;
+using Library.Core.Exceptions;
 using Library.Core.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,9 @@ namespace Library.Core.Services
         
         }
 
-        public async Task<IEnumerable<Authors>> GetAuthors()
+        public IEnumerable<Authors> GetAuthors()
         {
-            return await _unitOFWork.AuthorRepository.GetAll();
+            return _unitOFWork.AuthorRepository.GetAll();
         }
 
         public async Task<Authors> GetAuthor(int id)
@@ -34,15 +35,17 @@ namespace Library.Core.Services
             var city = await _unitOFWork.CityRepository.GetById(author.IdCityBirth);
             if (city == null)
             {
-                throw new Exception("City doesn't exists");
+                throw new BusinessException("City doesn't exists");
             }
             
             await _unitOFWork.AuthorRepository.Add(author);
+            await _unitOFWork.SaveChangesAsync();
         }
 
         public async Task<bool> UpdateAuthor(Authors author)
         {
-            await _unitOFWork.AuthorRepository.Update(author);
+            _unitOFWork.AuthorRepository.Update(author);
+            await _unitOFWork.SaveChangesAsync();
             return true;
         }
 

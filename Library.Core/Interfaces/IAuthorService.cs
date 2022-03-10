@@ -8,7 +8,7 @@ namespace Library.Core.Interfaces
     {
         Task<bool> DeleteAuthor(int id);
         Task<Authors> GetAuthor(int id);
-        Task<IEnumerable<Authors>> GetAuthors();
+        IEnumerable<Authors> GetAuthors();
         Task InsertAuthor(Authors author);
         Task<bool> UpdateAuthor(Authors author);
     }

@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Library.Core.Interfaces
 {
-    public interface IAuthorRepository
+    public interface IAuthorRepository : IRepository<Authors>
     {
-        Task<IEnumerable<Authors>> GetAuthors();
-        Task<Authors> GetAuthor(int id);
-        Task InsertAuthor(Authors author);
-        Task<bool> UpdateAuthor(Authors author);
-        Task<bool> DeleteAuthor(int id);
+        Task<IEnumerable<Authors>> GetAuthorsByCity(int idCity);
+        
     }
 }

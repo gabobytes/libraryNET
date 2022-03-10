@@ -6,7 +6,7 @@ namespace Library.Core.Interfaces
 {
     public interface ICityService
     {
-        Task<IEnumerable<Cities>> GetCities();
+        IEnumerable<Cities> GetCities();
         Task<Cities> GetCity(int id);
         Task InsertCity(Cities city);
         Task<bool> UpdateCity(Cities city);

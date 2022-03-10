@@ -9,37 +9,40 @@ namespace Library.Core.Services
 {
     public class CityService : ICityService
     {
-        private readonly IRepository<Cities> _cityRepository;
+        private readonly IUnitOfWork _unitOFWork;
 
-        public  CityService(IRepository<Cities> cityRepository)
+        public  CityService(IUnitOfWork unitOfWork)
         {
-            _cityRepository = cityRepository;
+            _unitOFWork = unitOfWork;
         }
 
         public async Task<Cities> GetCity(int id)
         {
-            return await _cityRepository.GetById(id);
+            return await _unitOFWork.CityRepository.GetById(id);
         }
 
-        public async Task<IEnumerable<Cities>> GetCities()
+        public  IEnumerable<Cities> GetCities()
         {
-            return await _cityRepository.GetAll();
+            return _unitOFWork.CityRepository.GetAll();
+
         }
 
         public async Task InsertCity(Cities city)
         {
-            await _cityRepository.Add(city);
+            await _unitOFWork.CityRepository.Add(city);
+            await _unitOFWork.SaveChangesAsync();
         }
 
         public async Task<bool> UpdateCity(Cities city)
         {
-             await _cityRepository.Update(city);
+            _unitOFWork.CityRepository.Update(city);
+            await _unitOFWork.SaveChangesAsync();
             return true;
         }
 
         public async Task<bool> DeleteCity(int id)
         {
-            await _cityRepository.Delete(id);
+            await _unitOFWork.CityRepository.Delete(id);
             return true;
         }
 
